@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const db = require('../models/workout');
-require('dotenv').config();
-
-mongoose.connect("mongodb+srv://ashleysalinas:root@Cluster0.ja3k3.mongodb.net/Cluster0?retryWrites=true&w=majority", {
+require("dotenv").config({path:'../.env'});
+ mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
